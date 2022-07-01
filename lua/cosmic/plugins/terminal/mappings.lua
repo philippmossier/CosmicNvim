@@ -1,6 +1,7 @@
 local map = require('cosmic.utils').map
 
-map('n', '<C-l>', ':FloatermToggle<CR>')
+-- map('n', '<C-l>', ':FloatermToggle<CR>')
+map('n', '<leader>so', ':FloatermToggle<CR>')-- shell open
 map('t', '<C-l>', [[<C-\><C-n>]])
 map('t', '<C-w>l', [[<C-\><C-n>:FloatermNext<CR>]])
 map('t', '<C-w>h', [[<C-\><C-n>:FloatermPrev<CR>]])

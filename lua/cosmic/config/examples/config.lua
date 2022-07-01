@@ -71,6 +71,8 @@ local config = {
   todo_comments = {},
   -- See :h nvim-treesitter-quickstart
   treesitter = {},
+  -- bufferline
+  bufferline = {},
   -- See :h notify.setup
   notify = {},
   -- See :h cmp-usage

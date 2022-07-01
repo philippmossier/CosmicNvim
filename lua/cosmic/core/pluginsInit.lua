@@ -239,6 +239,35 @@ return packer.startup(function()
     disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'colorizer'),
   })
 
+  -- webdevicons
+  require'nvim-web-devicons'.setup {
+    -- your personnal icons can go here (to override)
+    -- you can specify color or cterm_color instead of specifying both of them
+    -- DevIcon will be appended to `name`
+    override = {
+     zsh = {
+       icon = "",
+       color = "#428850",
+       cterm_color = "65",
+       name = "Zsh"
+     }
+    };
+    -- globally enable default icons (default to false)
+    -- will get overriden by `get_icons` option
+    default = true;
+   }
+
+    -- bufferLine
+    use({
+      'akinsho/bufferline.nvim',
+      tag = "v2.*",
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function()
+        require('cosmic.plugins.bufferline')
+      end,
+      disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'bufferline'),
+    })
+
   if user_config.add_plugins and not vim.tbl_isempty(user_config.add_plugins) then
     for _, plugin in pairs(user_config.add_plugins) do
       use(plugin)
